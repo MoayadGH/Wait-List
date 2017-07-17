@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -76,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     private Cursor getAllGuests() {
         return mDb.query(
                 WaitlistContract.WaitlistEntry.TABLE_NAME,
@@ -98,5 +98,10 @@ public class MainActivity extends AppCompatActivity {
     private boolean removeGuest(long id) {
         return mDb.delete(WaitlistContract.WaitlistEntry.TABLE_NAME, WaitlistContract.WaitlistEntry._ID + "=" + id, null) > 0;
     }
+
+
+
+
+
 
 }

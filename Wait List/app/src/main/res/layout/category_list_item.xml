@@ -14,6 +14,7 @@
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:textSize="16sp"
+        android:onClick="move_to_child"
         android:layout_marginLeft="10dp"
         android:backgroundTint="#6d1000" />
 
@@ -26,6 +27,7 @@
         android:layout_weight="1"
         android:fontFamily="sans-serif"
         android:textSize="16sp"
+        android:onClick="move_to_child"
         android:text="Category"/>
 
 
