@@ -1,6 +1,7 @@
 package com.example.android.waitlist;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -8,6 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -25,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        android.app.FragmentManager manager=getFragmentManager();
+        popfromclass dl=new popfromclass();
+        dl.show(manager,null);
+
+
+
         setContentView(R.layout.activity_main);
 
         RecyclerView waitlistRecyclerView;
@@ -61,6 +72,25 @@ public class MainActivity extends AppCompatActivity {
         }).attachToRecyclerView(waitlistRecyclerView);
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.main_activity_menu,menu);
+        return true;}
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id= item.getItemId();
+        if(id==R.id.action_settings){
+            Intent startSettingsActivity=new Intent(this,Settings_Avtivity.class);
+            startActivity(startSettingsActivity);
+            return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     public void addToWaitlist(View view) {
         if (mCategory_editText.getText().length() == 0) {

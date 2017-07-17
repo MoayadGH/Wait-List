@@ -2,5 +2,6 @@
     <string name="app_name">Waitlist</string>
     <string name="add_button_text">ADD</string>
     <string name="default_guest_name">[Guest name]</string>
+    <string name="action_settings">settings</string>
     <string name="default_party_size">\?</string>
 </resources>
