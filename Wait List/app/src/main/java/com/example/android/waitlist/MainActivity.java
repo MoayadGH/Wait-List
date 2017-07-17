@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     private Cursor getAllGuests() {
         return mDb.query(
                 WaitlistContract.WaitlistEntry.TABLE_NAME,
